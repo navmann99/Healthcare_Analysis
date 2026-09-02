@@ -40,6 +40,7 @@ H5: Medical condition is associated with admission type
 * Validation: Compare the distribution of admission types across medical conditions using a heatmap and chi-square test
 * Result: 
 * Summary: 
+
 ## Project Plan
 
 * Business Understanding: Defined the project's ethics-focused objectives and identified the key questions relevant to the business requirements.
@@ -61,3 +62,13 @@ H5: Medical condition is associated with admission type
 * Notebooks: jupyter_notebooks/01_ETL.ipynb, 02_EDA.ipynb, 03_Data_Visualisation.ipynb, 04_Modelling.ipynb
 
 * [Tableau Dashboard](your-tableau-link-here)
+
+## The rationale to map the business requirements to the Data Visualisations
+
+**Understand whether billing, outcomes, or care pathways vary by demographic or administrative factors** — box plots of Billing Amount by Medical Condition and by Gender, box plot of Age by Admission Type.
+
+**Determine whether commonly assumed risk factors actually influence billing or outcomes** — stacked bar chart of Test Results by Insurance Provider, heatmap of Medical Condition vs Admission Type.
+
+**Build and compare classification models, and check fairness** — a feature importance chart from the Random Forest model, a model comparison chart (accuracy/F1) for Logistic Regression vs Random Forest and a bar chart of model accuracy by Insurance Provider.
+
+**Present findings for both technical and non-technical audiences** — the notebook plots with statistical test results alongside them serve the technical side, while the Tableau dashboard's Fairness Signals and Ethics pages serve the non-technical side.
