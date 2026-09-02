@@ -40,3 +40,24 @@ H5: Medical condition is associated with admission type
 * Validation: Compare the distribution of admission types across medical conditions using a heatmap and chi-square test
 * Result: 
 * Summary: 
+## Project Plan
+
+* Business Understanding: Defined the project's ethics-focused objectives and identified the key questions relevant to the business requirements.
+* Data Understanding: Explored the raw dataset, assessed data quality and identified which fields were sensitive and needed careful handling.
+* ETL: Cleaned the raw data, checked for missing values, duplicates, incorrect data types and outliers, corrected any negative billing values, de-identified the dataset by dropping the Name column and engineered a Length of Stay feature.
+* EDA: Analysed distributions and relationships between features and outcomes and tested five hypotheses using statistical methods (t-test, chi-square tests and ANOVA), two were specifically framed around fairness.
+* Data Visualisation: Created plots mapped to each hypothesis and business requirement plus a correlation matrix and built an interactive Tableau dashboard for further exploration.
+* Modelling: Built and compared two classification models (Logistic Regression and Random Forest) to predict Test Results then ran a fairness check on the stronger model's performance across gender and insurance provider subgroups.
+* Insights & Recommendations: Summarised the findings from the hypothesis testing and the model and translated them into a governance-focused set of takeaways.
+
+* [Kanban board](your-kanban-board-link-here)
+
+**Project files are organised as followed:**
+* (Raw) Primary File: Dataset/Raw/healthcare_dataset.csv
+* (Cleaned, De-identified) Transformed File: Dataset/CleanData/healthcare_cleaned_deidentified.csv
+* Feature Importance File: Dataset/CleanData/feature_importance.csv
+* Model Comparison File: Dataset/CleanData/model_comparison.csv
+* Fairness Check File: Dataset/CleanData/fairness_check.csv
+* Notebooks: jupyter_notebooks/01_ETL.ipynb, 02_EDA.ipynb, 03_Data_Visualisation.ipynb, 04_Modelling.ipynb
+
+* [Tableau Dashboard](your-tableau-link-here)
