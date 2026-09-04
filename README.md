@@ -18,28 +18,28 @@
 
 H1: Billing amount differs significantly across medical conditions
 * Validation: Compare Billing Amount across Medical Condition groups using a box plot and one-way ANOVA
-* Result: 
-* Summary: 
+* Result: Rejected H0 (p = 0.049)
+* Summary: Technically significant, but only just below the 0.05 threshold, and the actual difference between conditions is small, mean billing ranges from around $25,155 (Cancer) to $25,807 (Obesity), a gap of about 2.5%. With almost 55,000 rows in the dataset, even a small difference between group means can come out as statistically significant, so I wouldn't treat this as a meaningful real-world pattern.
 
 H2: Test results are associated with insurance provider
 * Validation: Compare the proportion of Normal/Abnormal/Inconclusive test results across insurance providers using a stacked bar chart and chi-square test
-* Result:
-* Summary:
+* Result: Failed to reject H0 (p = 0.339)
+* Summary: The split between Normal, Abnormal, and Inconclusive results is almost identical across all five insurers, roughly 32-34% each. No evidence that a patient's insurer has any bearing on their test outcome in this dataset.
 
 H3: Age differs significantly across admission types
 * Validation: Compare Age across Admission Type groups using a box plot and one-way ANOVA
-* Result:
-* Summary:
+* Result: Failed to reject H0 (p = 0.630)
+* Summary: Mean age is essentially identical across Elective, Emergency, and Urgent admissions, all around 51.5 years. Age doesn't predict how urgently someone is admitted in this dataset.
 
 H4: Billing amount differs significantly between male and female patients
 * Validation: Compare Billing Amount between genders using a box plot and independent t-test
-* Result: 
-* Summary:
+* Result: Failed to reject H0 (p = 0.247)
+* Summary: Male and female mean billing amounts are within 0.5% of each other ($25,616 vs $25,476). No evidence of gender-based billing disparity in this dataset.
 
 H5: Medical condition is associated with admission type
 * Validation: Compare the distribution of admission types across medical conditions using a heatmap and chi-square test
-* Result: 
-* Summary: 
+* Result: Failed to reject H0 (p = 0.057)
+* Summary: Borderline, sitting just above the 0.05 threshold, but not significant. Counts are spread fairly evenly across the grid, so I wouldn't read anything into this one.
 
 ## Project Plan
 
