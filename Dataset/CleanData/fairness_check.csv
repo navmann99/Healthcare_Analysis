@@ -1,0 +1,8 @@
+subgroup,accuracy,subgroup_type
+Female,0.4135488557936796,Gender
+Male,0.42018950437317787,Gender
+Aetna,0.4268642447418738,Insurance Provider
+Blue Cross,0.42137271937445697,Insurance Provider
+Cigna,0.41523118766999095,Insurance Provider
+Medicare,0.40018148820326677,Insurance Provider
+UnitedHealthcare,0.42100456621004567,Insurance Provider

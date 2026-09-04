@@ -1,0 +1,20 @@
+,0
+num__Billing Amount,0.34636529300227487
+num__Age,0.2773463913902325
+num__Length of Stay,0.23454662005015525
+cat__Admission Type_Elective,0.00995695995787125
+cat__Admission Type_Urgent,0.009895577702129621
+cat__Admission Type_Emergency,0.009838607143261104
+cat__Insurance Provider_Medicare,0.009655611575560481
+cat__Insurance Provider_Cigna,0.009340438193782842
+cat__Medical Condition_Cancer,0.00909049863864487
+cat__Insurance Provider_Aetna,0.008978405117991002
+cat__Medical Condition_Diabetes,0.008886894221261762
+cat__Insurance Provider_Blue Cross,0.008719846566134875
+cat__Medical Condition_Obesity,0.00862107082142407
+cat__Insurance Provider_UnitedHealthcare,0.00839026706104668
+cat__Medical Condition_Arthritis,0.008299220997979155
+cat__Gender_Male,0.008133722594516309
+cat__Gender_Female,0.008081062200632282
+cat__Medical Condition_Asthma,0.00793648304481914
+cat__Medical Condition_Hypertension,0.007917029720281943

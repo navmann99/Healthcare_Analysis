@@ -1,0 +1,4 @@
+Model,Accuracy
+Majority-class baseline,0.335
+Logistic Regression,0.3364
+Random Forest,0.4169
