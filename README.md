@@ -72,3 +72,13 @@ H5: Medical condition is associated with admission type
 **Build and compare classification models, and check fairness** — a feature importance chart from the Random Forest model, a model comparison chart (accuracy/F1) for Logistic Regression vs Random Forest and a bar chart of model accuracy by Insurance Provider.
 
 **Present findings for both technical and non-technical audiences** — the notebook plots with statistical test results alongside them serve the technical side, while the Tableau dashboard's Fairness Signals and Ethics pages serve the non-technical side.
+
+## Analysis Techniques Used
+
+I used mean, median and standard deviation to compare groups across the key variables for each hypothesis. To test whether the differences I found were actually significant I ran a one-way ANOVA for numeric variables against 3+ groups (H1, H3) an independent t-test for numeric variables against 2 groups (H4) and chi-square tests for categorical vs categorical comparisons (H2, H5) all using pingouin.
+
+I also looked at how the numeric features correlated with each other using a correlation matrix to get an overall picture before diving into each hypothesis individually.
+
+For the machine learning side I started with single-feature baseline models before testing whether combining features improved performance then built and compared two classification models. Logistic Regression and Random Forest using a scikit-learn pipeline to handle the categorical columns through one-hot encoding. I then checked the stronger model's accuracy across gender and insurance provider subgroups to see whether it performed consistently across every patient group.
+
+One thing worth pointing out almost none of the hypotheses I tested came back statistically significant including both of the fairness-focused ones. With almost 55,000 rows to work with even a very small real difference can register as statistically significant so I made a point of checking the actual size of each difference alongside the p-value rather than treating significance alone as meaningful.
