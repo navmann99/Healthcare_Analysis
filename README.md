@@ -65,11 +65,11 @@ H5: Medical condition is associated with admission type
 
 ## The rationale to map the business requirements to the Data Visualisations
 
-**Understand whether billing, outcomes, or care pathways vary by demographic or administrative factors** — box plots of Billing Amount by Medical Condition and by Gender, box plot of Age by Admission Type.
+**Understand whether billing, outcomes or care pathways vary by demographic or administrative factors** — box plots of Billing Amount by Medical Condition and by Gender, box plot of Age by Admission Type.
 
 **Determine whether commonly assumed risk factors actually influence billing or outcomes** — stacked bar chart of Test Results by Insurance Provider, heatmap of Medical Condition vs Admission Type.
 
-**Build and compare classification models, and check fairness** — a feature importance chart from the Random Forest model, a model comparison chart (accuracy/F1) for Logistic Regression vs Random Forest and a bar chart of model accuracy by Insurance Provider.
+**Build and compare classification models and check fairness** — a feature importance chart from the Random Forest model a model comparison chart (accuracy/F1) for Logistic Regression vs Random Forest and a bar chart of model accuracy by Insurance Provider.
 
 **Present findings for both technical and non-technical audiences** — the notebook plots with statistical test results alongside them serve the technical side, while the Tableau dashboard's Fairness Signals and Ethics pages serve the non-technical side.
 
@@ -164,3 +164,23 @@ The fairness check only covers Gender and Insurance Provider since these were th
 ## Bugs and Fixes
 
 I didn't encounter many bugs within this project since the fraud detection project (porject 2) was still fresh in my head I remembered a lot of the mistakes not to repeat this time around. The main issue I ran into was Jupyter kernel problems while running the Modelling notebook which I had to restart and re-run from the top to resolve. 
+
+## AI Assistance
+
+* I used Claude AI mainly for the machine learning and fairness-check sections, to help me understand how to check model performance across subgroups and interpret what the results meant.
+* It helped me structure the ethics section of this README around the actual hypothesis and fairness-check results rather than writing generic statements.
+* I used it a little to plan the project and notebook structure, reusing the same approach as my fraud detection project.
+* I mainly used it as a guide to check I was going in the right direction rather than relying on it to do the work for me.
+
+## Main Data Analysis Libraries
+
+* Pandas — used throughout ETL, EDA and Modelling
+* Numpy — numerical operations
+* Matplotlib — charts in the EDA and Data Visualisation notebooks
+* Seaborn — charts in the EDA and Data Visualisation notebooks
+* Pingouin — normality checks, t-tests, chi-square tests and ANOVA
+* Scikit-learn — Logistic Regression, Random Forest, pipelines and evaluation metrics
+
+## Credits & Acknowledgements
+
+* Dataset: [prasad22/healthcare-dataset](https://www.kaggle.com/datasets/prasad22/healthcare-dataset) (Kaggle, CC0-1.0)
