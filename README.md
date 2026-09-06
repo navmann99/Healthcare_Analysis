@@ -152,3 +152,15 @@ The dataset is synthetic (Faker-generated) so the near-total absence of signific
 Model performance is modest (41.7% accuracy on a 3-class problem) and shouldn't be relied on for any real decision-making it demonstrates the modelling and fairness-checking process, not a production-ready classifier.
 
 The fairness check only covers Gender and Insurance Provider since these were the two subgroups tested as hypotheses earlier in the project. Other potentially relevant subgroups such as age band or medical condition weren't checked for model fairness in this version.
+
+## Development Roadmap
+
+* I'd like to test the same hypotheses and fairness check against a real properly governed healthcare dataset to build my confidence in knowing whether findings from a synthetic dataset actually generalise or whether they're an artefact of the data being simulated.
+* I want to get more practice extending fairness checks to additional subgroups such as age band or medical condition rather than just the two I tested here so this becomes second nature rather than something I have to think through from scratch each time.
+* I'd like to improve my understanding of why a model underperforms rather than just accepting a weak result trying additional feature engineering or alternative algorithms on this dataset would help me build that diagnostic skill.
+* I want to develop my ability to communicate technical findings to a non-technical audience building the Ethics & Governance dashboard page in a way a hospital administrator could genuinely follow would be good practice for that.
+* Going forward, I want de-identification and fairness-checking to become a habit I apply automatically on any project involving personal or sensitive-looking data not something I only remember to do because a project is explicitly framed around ethics.
+
+## Bugs and Fixes
+
+I didn't encounter many bugs within this project since the fraud detection project (porject 2) was still fresh in my head I remembered a lot of the mistakes not to repeat this time around. The main issue I ran into was Jupyter kernel problems while running the Modelling notebook which I had to restart and re-run from the top to resolve. 
