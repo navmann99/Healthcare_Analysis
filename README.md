@@ -119,3 +119,26 @@ Based on the analysis this is what I'd recommend:
 * Keep the fairness check as a standard step for any future modelling work on patient data not just this project it's a small amount of extra work for a genuinely important governance signal.
 * Continue de-identifying any direct patient identifiers before analysis even on synthetic data so the workflow is safe to reuse on real data without changes.
 * Don't present a model this weak (41.7% accuracy on a 3-class problem) as ready for real decision-making even a fair model isn't a useful one if it isn't accurate enough to trust.
+
+## Model
+
+I built and compared two classification models to predict Test Results (Normal/Abnormal/Inconclusive): Logistic Regression and Random Forest, both using a scikit-learn pipeline with one-hot encoding to handle the categorical columns.
+
+Before building the full models, I started with single-feature baselines using Billing Amount and Age individually both landed almost exactly on the 33.5% majority-class baseline and combining them together made no difference at all. This told me early on that these two features alone weren't carrying much signal which set my expectations going into the wider comparison.
+
+Random Forest was the clear winner of the two full models reaching 41.7% accuracy, compared to Logistic Regression's 33.6%, which barely beat the baseline. I'm recommending Random Forest, but with a real caveat, 41.7% on a 3-class problem is still a weak result overall and I wouldn't present this model as genuinely predicting patient outcomes without making that limitation very clear. It's best read as a demonstration that the pipeline works not as something ready for real decision-making.
+
+Feature importance from the Random Forest model showed Billing Amount, Age and Length of Stay as the strongest predictors by a wide margin with none of the one-hot encoded categorical features individually mattering much this fits with the EDA notebook finding no significant relationship for Insurance Provider (H2) or Medical Condition (H5).
+
+I also checked the Random Forest model's accuracy separately across Gender and Insurance Provider subgroups. Accuracy stayed within a tight band, 41.4%-42.0% by gender and 40.0%-42.7% by insurance provider showing no evidence the model performs systematically worse for any particular group.
+
+## Dashboard Design
+
+I'm building the dashboard in Tableau Public.
+
+1. **Overview** — key stats (patient count, average billing, average length of stay) and a summary of the dataset.
+2. **Billing & Conditions** — the chart for H1, my most significant (if practically weak) finding.
+3. **Fairness Signals** — the charts for H2 and H4, framed for a non-technical reader, does your insurer or gender affect your results or your bill?
+4. **Admissions** — the charts for H3 and H5.
+5. **Model Insights** — feature importance and model comparison charts, plus the fairness-by-subgroup chart.
+6. **Data Ethics & Governance** — a plain-English page summarising the Ethical Considerations section above, written for a general hospital-administrator audience rather than a technical one.
