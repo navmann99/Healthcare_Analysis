@@ -109,3 +109,13 @@ Almost nothing tested in this project showed a statistically meaningful relation
 Both fairness-focused hypotheses (H2 and H4) came back with no significant relationship at all which was genuinely one of the more useful findings of the project even though it's a "nothing found" result rather than a positive one. It means the data itself isn't carrying an obvious bias into whatever gets built on top of it.
 
 The modelling results told a similar story. Random Forest reached 41.7% accuracy on a 3-class prediction problem. Only around 8 points above the 33.5% majority-class baseline and Logistic Regression barely beat the baseline at all (33.6%). Neither model found strong predictive signal which lines up with the hypothesis testing there just isn't much real structure in this dataset for a model to learn from.
+
+## Prevention Measures / Recommendations
+
+Based on the analysis this is what I'd recommend:
+
+* Don't treat the borderline H1 result as a real-world finding a ~2.5% difference in billing across medical conditions isn't practically meaningful even though it's technically significant.
+* Any pipeline like this reused on real hospital data should re-run all five hypotheses and the fairness check before drawing any conclusions a synthetic dataset can validate that the pipeline works but it can't validate real-world fairness.
+* Keep the fairness check as a standard step for any future modelling work on patient data not just this project it's a small amount of extra work for a genuinely important governance signal.
+* Continue de-identifying any direct patient identifiers before analysis even on synthetic data so the workflow is safe to reuse on real data without changes.
+* Don't present a model this weak (41.7% accuracy on a 3-class problem) as ready for real decision-making even a fair model isn't a useful one if it isn't accurate enough to trust.
