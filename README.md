@@ -142,3 +142,13 @@ I'm building the dashboard in Tableau Public.
 4. **Admissions** — the charts for H3 and H5.
 5. **Model Insights** — feature importance and model comparison charts, plus the fairness-by-subgroup chart.
 6. **Data Ethics & Governance** — a plain-English page summarising the Ethical Considerations section above, written for a general hospital-administrator audience rather than a technical one.
+
+## Limitations
+
+The dataset is synthetic (Faker-generated) so the near-total absence of significant relationships is a property of this particular dataset, not something I can generalise beyond it.
+
+106 rows had a negative Billing Amount which I treated as sign errors and corrected to positive values using .abs(). That's a documented assumption rather than a certainty a different explanation, for example genuine refunds, would change how those rows should have been handled.
+
+Model performance is modest (41.7% accuracy on a 3-class problem) and shouldn't be relied on for any real decision-making it demonstrates the modelling and fairness-checking process, not a production-ready classifier.
+
+The fairness check only covers Gender and Insurance Provider since these were the two subgroups tested as hypotheses earlier in the project. Other potentially relevant subgroups such as age band or medical condition weren't checked for model fairness in this version.
