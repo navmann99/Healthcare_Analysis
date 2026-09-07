@@ -85,7 +85,7 @@ One thing worth pointing out almost none of the hypotheses I tested came back st
 
 ## Ethical Considerations
 
-Ethics was considered throughout ETL, EDA, modelling, and dashboard interpretation, covering both the data itself and the AI model built on top of it.
+Ethics was considered throughout ETL, EDA, modelling and dashboard interpretation, covering both the data itself and the AI model built on top of it.
 
 ### Data Privacy and Governance
 Even though the dataset used in this project is fully synthetic, generated using Python's Faker library it is structured to closely resemble real hospital admission records, patient names, ages, conditions, billing and insurance details. Treating a dataset like this carelessly just because it isn't real would defeat the purpose of the project, so I approached it as though it were genuine patient data throughout. In the ETL notebook the Name column a direct identifier, was dropped before any analysis, modelling or dashboard work began rather than at the end of the pipeline on the basis that a sensitive field shouldn't sit in working data any longer than necessary. This reflects the core GDPR principle of data minimisation only keeping what's actually needed for the stated purpose which in this case was hypothesis testing and modelling not identifying individuals.
@@ -164,6 +164,22 @@ The fairness check only covers Gender and Insurance Provider since these were th
 ## Bugs and Fixes
 
 I didn't encounter many bugs within this project since the fraud detection project (porject 2) was still fresh in my head I remembered a lot of the mistakes not to repeat this time around. The main issue I ran into was Jupyter kernel problems while running the Modelling notebook which I had to restart and re-run from the top to resolve. 
+
+## Reflection
+
+Going into this project I wanted to reuse the structure from my fraud detection project as closely as possible and having just finished that project made a real difference the overall structure ETL through to modelling felt familiar rather than something I had to figure out from scratch, which meant I could spend more time on the parts that were genuinely new this time around particularly the ethics and fairness work.
+
+The two main practical challenges I ran into were Jupyter kernel issues which cost me time I hadn't planned for and the overall time limit for the assignment balancing depth in the ethics sections against the time I had available meant I had to be more decisive than I would have liked about when a section was "done enough" versus when to keep refining it.
+
+Tableau was a genuinely easier part of this project compared to my last one having more exposure to it meant I knew what I was doing and could move through building the dashboard with more confidence rather than learning the tool and the content at the same time.
+
+Almost every hypothesis I tested came back non-significant which was a real challenge to work with. My instinct early on was to wonder if I'd done something wrong but going back through the ETL and EDA notebooks confirmed the data itself just doesn't have much real structure connecting these variables. Learning to trust a "nothing found" result rather than second-guessing it or trying to dress it up as something stronger was a genuine shift in how I approached this project.
+
+The ethics framing changed how I worked throughout not just what I wrote about afterwards. It reinforced how important it is to actually understand the laws and ethical obligations around a dataset before working with it hospital data is genuinely sensitive and knowing what can and can't be used, and why, isn't something to treat as a formality. Knowing this project would be assessed on both data ethics and AI ethics meant I built fairness directly into my hypotheses (H2, H4) rather than treating it as a topic to write about once the analysis was done and it meant the fairness check in the Modelling notebook wasn't an afterthought it was one of the main things I wanted the model to answer.
+
+My confidence with statistical testing grew a lot over the course of this project, interpreting p-values, understanding when a result is statistically significant but not practically meaningful and choosing the right test for the data all felt more natural by the end than they did at the start.
+
+If I did this again, the main thing I'd change is when the ethics and legal research happens. Next time, before doing any analysis on a new dataset I want to research what should and shouldn't be used and what laws I'll need to abide by first rather than working that out as I go. Doing that groundwork upfront would let the ethical considerations shape the analysis from the very beginning rather than being layered on as I went.
 
 ## AI Assistance
 
