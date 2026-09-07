@@ -51,7 +51,9 @@ H5: Medical condition is associated with admission type
 * Modelling: Built and compared two classification models (Logistic Regression and Random Forest) to predict Test Results then ran a fairness check on the stronger model's performance across gender and insurance provider subgroups.
 * Insights & Recommendations: Summarised the findings from the hypothesis testing and the model and translated them into a governance-focused set of takeaways.
 
-* [Kanban board](your-kanban-board-link-here)
+* [Kanban board](https://github.com/users/navmann99/projects/3)
+
+![alt text](image.png)
 
 **Project files are organised as followed:**
 * (Raw) Primary File: Dataset/Raw/healthcare_dataset.csv
@@ -61,7 +63,7 @@ H5: Medical condition is associated with admission type
 * Fairness Check File: Dataset/CleanData/fairness_check.csv
 * Notebooks: jupyter_notebooks/01_ETL.ipynb, 02_EDA.ipynb, 03_Data_Visualisation.ipynb, 04_Modelling.ipynb
 
-* [Tableau Dashboard](your-tableau-link-here)
+* [Tableau Dashboard](https://public.tableau.com/views/healthcareAnalysisDashboard_17887705346860/DataEthicsGoverence?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ## The rationale to map the business requirements to the Data Visualisations
 
